@@ -45,7 +45,7 @@ int linenumber(char* filename) {//统计行数
 	FILE* fp = NULL;
 	int c, lc = 0;
 	int line = 0;
-	fp = fopen(filename, "r");
+	fp = fopen(filename, "r");   
 	if (wordnumber(filename) == 0)
 		return 0;
 	while ((c = fgetc(fp)) != EOF) {
