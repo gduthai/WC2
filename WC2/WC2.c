@@ -60,24 +60,28 @@ int linenumber(char* filename) {//统计行数
 
 
 
+
 int main() {
+	int i = 0;
 	FILE* fp;
 	int c_num, w_number, l_number;
 	char c[3];
 	char filename[20];
-	printf("输入命令wc.exe");
-	scanf("%s %s", c, filename);
-	if ((fp = fopen(filename, "r")) == NULL) {
-		printf("no found");
-		return 0;
-	}
-	switch (c[1]) {
+	for (; i < 3; i++) {
+		printf("输入命令wc.exe");
+		scanf("%s %s", c, filename);
+		if ((fp = fopen(filename, "r")) == NULL) {
+			printf("no found");
+			return 0;
+		}
+		switch (c[1]) {
 
 
-	case 'c': {printf("char number=%d", charnumber(filename)); break; }
-	case 'w': {printf("word number=%d", wordnumber(filename)); break; }
-	case 'l': {printf("line number=%d", linenumber(filename)); break; }
+		case 'c': {printf("char number=%d\n", charnumber(filename)); break; }
+		case 'w': {printf("word number=%d\n", wordnumber(filename)); break; }
+		case 'l': {printf("line number=%d\n", linenumber(filename)); break; }
 
+		}
 	}
 	getchar();
 	return 0;
